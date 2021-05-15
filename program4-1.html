@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="eng-us">
+<head>
+    <meta charset="UTF-8"
+    <!-- Template for CIT 160</title --!>
+<style>
+body {
+	text-align: center;
+}
+header,footer {
+	background-color: #000;
+	color: #fff;
+	padding: 10px;
+}
+
+footer {
+	font-size: 13px;
+	letter-spacing: 1.5pt;
+}
+
+h1,h2 {
+	margin: 0;
+}
+
+h2, #currentdate {
+	color: yellow;
+}
+
+main {
+	margin: 10px auto;
+	border: 1px solid #999;
+	padding: 10px;
+	max-width: 500px;
+	background-color: #abe;
+	box-shadow: 0 0 30px;
+}
+
+h3 {
+	font-size: 24px;
+	margin: 0 0 15px 0;
+	border-bottom: 1px solid #333;
+	padding: 0;
+}
+
+label {
+	display: block;
+	margin: 5px;
+}
+
+
+</style>
+</head>
+<body>
+    <header>
+        <h1>Week 4:Add two numbers</h1>
+        <h2>Shepherd Zengwe</h2>
+    </header>
+    <main>
+        <h3> Add two numbers</h3>
+        <label>Enter Number One: <input type="text" id="number1"></label>
+        <label>Enter Number Two: <input type="text" id="number2"></label>
+        <label><button onclick="addnumbers()">Add Numbers</button></label>
+            <hr>
+        <p><span id="output"></span></p>
+    </main>
+    <footer>
+        &copy;2021 &bull; Shepherd Zengwe &bull; BYU-Idaho &bull; CIT 160
+
+    </footer>
+
+    <script>
+		function addnumbers(){
+            //INPUT-from the number1 & 2 input fields and converts them to numbers
+            let num1=parseFloat(document.getElementById("number1").value);
+            let num2=parseFloat(document.getElementById("number2").value);
+            //PROCESSING-addition of the two numbers and to store in a variable total
+            let total=num1 + num2;
+            //OUTPUT-print the message with the added total
+            document.getElementById("output").innerHTML="The sum of  " + num1+ " plus " + num2 + " equals "+ total+"!"
+		}
+
+
+    </script>
+</body>
+
+    
+</html>
