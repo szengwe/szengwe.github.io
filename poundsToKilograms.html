@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="eng-us">
+<head>
+    <meta charset="UTF-8"
+    <title>Pounds to Kilograms</title>
+<style>
+body {
+	text-align: center;
+}
+header,footer {
+	background-color: #000;
+	color: #fff;
+	padding: 10px;
+}
+
+footer {
+	font-size: 13px;
+	letter-spacing: 1.5pt;
+}
+
+h1,h2 {
+	margin: 0;
+}
+
+h2, #currentdate {
+	color: yellow;
+}
+
+main {
+	margin: 10px auto;
+	border: 1px solid #999;
+	padding: 10px;
+	max-width: 500px;
+	background-color: #abe;
+	box-shadow: 0 0 30px;
+}
+
+h3 {
+	font-size: 24px;
+	margin: 0 0 15px 0;
+	border-bottom: 1px solid #333;
+	padding: 0;
+}
+
+label {
+	display: block;
+	margin: 5px;
+}
+
+
+</style>     
+
+</head>
+<body>
+    <header>
+        <h1>Week 5:Assignment</h1>
+        <h2>Conversion</h2>
+    </header>
+    <main>
+        <h3> Pounds to Kilograms</h3>
+        <label>Enter weight in Pounds: <input type="text" id="Pounds"></label>
+        <label><button onclick="poundstokilograms()">Convert</button></label>
+            <hr>
+        <p><span id="output"></span></p>
+    </main>
+    <footer>
+        &copy;2021 &bull; Shepherd Zengwe &bull; BYU-Idaho &bull; CIT 160
+
+    </footer>
+
+    <script>
+		function poundstokilograms(){
+			//input-input weight in Pounds
+			let pound=parseFloat(document.getElementById("Pounds").value);
+			//processing-convert the pounds to kilograms by dividing by the appropriate number
+			let kilograms=pound/2.205
+			//output-display output in Kilograms
+			document.getElementById("output").innerHTML=kilograms.toFixed(1) +" Kilograms"
+			
+
+		}
+
+
+    </script>
+</body>
+
+    
+</html>
