@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="eng-us">
+<head>
+    <meta charset="UTF-8"
+    <title>Template for CIT 160</title>
+<style>
+body {
+	text-align: center;
+}
+header,footer {
+	background-color: #000;
+	color: #fff;
+	padding: 10px;
+}
+
+footer {
+	font-size: 13px;
+	letter-spacing: 1.5pt;
+}
+
+h1,h2 {
+	margin: 0;
+}
+
+h2, #currentdate {
+	color: yellow;
+}
+
+main {
+	margin: 10px auto;
+	border: 1px solid #999;
+	padding: 10px;
+	max-width: 500px;
+	background-color: #abe;
+	box-shadow: 0 0 30px;
+}
+
+h3 {
+	font-size: 24px;
+	margin: 0 0 15px 0;
+	border-bottom: 1px solid #333;
+	padding: 0;
+}
+
+label {
+	display: block;
+	margin: 5px;
+}
+
+
+</style>
+</head>
+<body>
+    <header>
+        <h1>Week 3:Footware guide</h1>
+        <h2>Choose weather for a guide on footware</h2>
+    </header>
+    <main>
+        <h3> Add two numbers</h3>
+        <label for= "weather_selection">Select wheather</label>
+
+		<select id="weather">
+			<option value="" disabled selected>--Select weather--</option>
+			<option value="hot">Hot</option>
+			<option value="rain">Rain</option>
+			<option value="snow">Snow</option>
+			<option value="unknown">unknown</option>
+		</select>
+
+        <label><button onclick="shoetype()">Show</button></label>
+            <hr>
+        <p><span id="output"></span></p>
+    </main>
+    <footer>
+        &copy;2021 &bull; Shepherd Zengwe &bull; BYU-Idaho &bull; CIT 160
+
+    </footer>
+
+    <script>
+function shoetype(){
+	//input from the select values
+	let weather = document.getElementById("weather").value
+	let message ="Select weather";
+
+	//processing:assign each weather condition to an appropriate shoe 
+	switch (weather){
+		default:
+			message="Select weather";
+			break;
+		case "hot":
+			message="Wear Sandals";
+			break;
+		case "rain":
+			message= "Wear galoshes";
+			break;
+		case "snow":
+			message="Wear boots";
+			break;
+		case "unkown":
+			message="Wear shoes"
+			break;
+
+	// Output of the shoe guide to be worn on a given weather
+	document.getElementById("output").innerHTML=message
+
+	}
+
+}
+
+    </script>
+</body>
+
+    
+</html>
