@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="eng-us">
+<head>
+    <meta charset="UTF-8"
+    <title>Shepherd Zengwe</title>
+<style>
+body {
+	text-align: center;
+}
+header,footer {
+	background-color: #000;
+	color: #fff;
+	padding: 10px;
+}
+
+footer {
+	font-size: 13px;
+	letter-spacing: 1.5pt;
+}
+
+h1,h2 {
+	margin: 0;
+}
+
+h2, #currentdate {
+	color: yellow;
+}
+
+main {
+	margin: 10px auto;
+	border: 1px solid #999;
+	padding: 10px;
+	max-width: 500px;
+	background-color: #abe;
+	box-shadow: 0 0 30px;
+}
+
+h3 {
+	font-size: 24px;
+	margin: 0 0 15px 0;
+	border-bottom: 1px solid #333;
+	padding: 0;
+}
+
+label {
+	display: block;
+	margin: 5px;
+}
+
+
+</style>
+</head>
+<body>
+    <header>
+        <h1>Week 7:Discount</h1>
+    </header>
+    <main>
+        <h3> Calculate amount due</h3>
+
+		<label>Enter total amount: <input type="text" id="subtotal"></label>
+
+		<label><button onclick="compute()">Calculate</button></label>
+        
+            <hr>
+        <p><span id="output"></span></p>
+    </main>
+    <footer>
+        &copy;2021 &bull; Shepherd Zengwe &bull; BYU-Idaho &bull; CIT 160
+
+    </footer>
+
+    <script>
+		function compute() {
+			//input subtotal and create a variable for the day of the week
+			let subtotal=parseInt(document.getElementById("subtotal").value);
+			let dayofWeek = new Date().getDay();
+			let rate = 0
+
+			//Processing-define the holidays and weekends where the message would change
+			if (subtotal > 50 && dayofWeek ==2){
+				if (dayofweek == 3){
+					rate = 0.1
+				}
+			}
+		
+			let total1 =((subtotal-(subtotal * rate)) *1.06).toFixed(2)
+
+			 document.getElementById("output").innerHTML="Amount due is " + total1 +"."
+
+		}
+
+
+    </script>
+</body>
+
+    
+</html>
